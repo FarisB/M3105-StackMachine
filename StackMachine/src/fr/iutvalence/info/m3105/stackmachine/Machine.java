@@ -1,5 +1,6 @@
 package fr.iutvalence.info.m3105.stackmachine;
 
+
 public class Machine
 {
 	private CPU cpu;
