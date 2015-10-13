@@ -1,16 +1,21 @@
 package fr.iutvalence.info.m3105.stackmachine;
 
+import fr.iutvalence.info.m3105.stackmachine.Exceptions.AddressOutOfBoundsException;
+
 
 public class Machine
 {
 	private CPU cpu;
 	private Memory programMemory;
+	private Stack stack;
+	private IOInterface io;
 
-	public Machine(CPU cpu, Memory programMemory, Stack expStack, Stack callStack, IO ioSystem)
+	public Machine(Stack expStack, Stack callStack, IOInterface ioSystem)
 	{
-		super();
-		this.cpu = cpu;
-		this.programMemory = programMemory;
+		cpu = new CPU();
+		programMemory = new Memory(10,10);
+		stack = new Stack(10);
+		io = new IO(null, null, null);
 		this.cpu.wireToProgramMemory(programMemory);
 		this.cpu.wireToExpStack(expStack);
 		this.cpu.wireToCallStack(callStack);

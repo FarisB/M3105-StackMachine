@@ -2,6 +2,10 @@ package fr.iutvalence.info.m3105.stackmachine;
 
 import java.io.IOException;
 
+import fr.iutvalence.info.m3105.stackmachine.Exceptions.AddressOutOfBoundsException;
+import fr.iutvalence.info.m3105.stackmachine.Exceptions.StackOverflowException;
+import fr.iutvalence.info.m3105.stackmachine.Exceptions.StackUnderflowException;
+
 
 public class CPU
 {
@@ -29,9 +33,9 @@ public class CPU
 	public final static int DUP		= 0x14;
 	public final static int POP		= 0x15;
 	private int opCode;
-	private IO ioSystem;
+	private IOInterface ioSystem;
+	private int programCounter;
 	
-	// TODO something is missing here...
 
 	public void run()
 	{
@@ -41,12 +45,12 @@ public class CPU
 			{
 				// TODO something is missing here...
 
-				// System.err.print("@" + this.programCounter + ": ");
+				System.err.print("@" + this.programCounter + ": ");
 				switch (opCode)
 				{
 					case HALT:
 					{
-						// System.err.println("HALT");
+						System.err.println("HALT");
 						this.ioSystem.displayProgramTermination();
 						return;
 					}
@@ -196,7 +200,7 @@ public class CPU
 		
 	}
 
-	public void wireToIoSubsystem(IO ioSystem) {
+	public void wireToIoSubsystem(IOInterface ioSystem) {
 		// TODO Auto-generated method stub
 		
 	}

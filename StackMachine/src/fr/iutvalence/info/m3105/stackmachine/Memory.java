@@ -1,12 +1,9 @@
 package fr.iutvalence.info.m3105.stackmachine;
 
-public class Memory {
+public class Memory extends MemoryAb {
 
-	
-	
-	
-	
 	public Memory(int i, int j) {
+		super(i, j);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -19,6 +16,5 @@ public class Memory {
 		// TODO Auto-generated method stub
 		
 	}
-
 
 }

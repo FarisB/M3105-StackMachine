@@ -1,5 +1,8 @@
 package fr.iutvalence.info.m3105.stackmachine;
 
+import fr.iutvalence.info.m3105.stackmachine.Exceptions.AddressOutOfBoundsException;
+import fr.iutvalence.info.m3105.stackmachine.Exceptions.InvalidParametersException;
+
 
 public class MachineLauncher
 {
@@ -65,7 +68,7 @@ public class MachineLauncher
 			// Safely ignore this error, which is not one
 		}
 		
-		IO ioSystem = new IO(System.in, System.out, System.err);
+		IOInterface ioSystem = new IO(System.in, System.out, System.err);
 		CPU cpu = new CPU();		
 		Machine machine = new Machine(cpu, programMemory, expStack, callStack, ioSystem );
 		try

@@ -1,0 +1,16 @@
+window_sizes 1280 962 141 477 682 82
+diagrams
+  active  classdiagram_ref 128003 // Stack Diagrammme
+    1133 804 100 4 0 0
+end
+show_stereotypes
+selected attribute_ref 128643 // opCode
+open
+  class_ref 128003 // CPU
+  class_ref 128131 // IO
+  class_ref 128259 // Instruction
+  class_ref 128387 // Machine
+  class_ref 128643 // Memory
+  class_ref 128771 // Program
+end
+end
